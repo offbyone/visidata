@@ -11,7 +11,7 @@ BUILD=$VD/_build
 BUILDWWW=$BUILD/www
 MAN=$VD/visidata/man
 DOCS=$WWW/docs
-HOWTODEV=$WWW/howto/dev
+HOWTO=$WWW/howto
 NEWS=$WWW/news
 VIDEOS=$WWW/videos
 HELP=$WWW/help
@@ -100,8 +100,8 @@ for postpath in `find $DOCS -name '*.md'`; do
 done
 
 # Build /howto/dev
-for postpath in `find $HOWTODEV -name '*.md'`; do
-    post=${postpath##$HOWTODEV/}
+for postpath in `find $HOWTO -name '*.md'`; do
+    post=${postpath##$HOWTO/}
     postname=${post%.md}
     mkdir -p $BUILDWWW/howto/dev/$postname
     posthtml=$BUILDWWW/howto/dev/$postname/index
