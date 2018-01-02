@@ -139,14 +139,14 @@ By default there is no `setter`, which makes the column read-only.
 
 There are several helpers for constructing `Column` objects:
 
-* `ColumnAttr(colname, attrname=colname, **kwargs)` gets/sets an attribute from the row object using `getattr`/`setattr`.
-  This is useful when the rows are Python objects.
+* `ColumnAttr(colname, attrname, **kwargs)` gets/sets the `attrname` attribute from the row object using `getattr`/`setattr` (as in `row.attr`).  The `attrname` defaults to the `colname` itself.
+  `ColumnAttr` is useful when the rows are Python objects.
 
-* `ColumnItem(colname, itemkey=colname, **kwargs)` uses the builtin `getitem` and `setitem` on the row.
+* `ColumnItem(colname, itemkey, **kwargs)` uses the builtin `getitem` and `setitem` on the row (as in `row[itemkey]`).  The `itemkey` also defaults to the `colname` itself.
   This is useful when the rows are Python mappings or sequences, like dicts or lists.
 
-* `SubrowColumn(origcol, subrowidx, **kwargs)` delegates to the original column with some part of the row.
-This is useful for rows which are a list of references to other rows, like with joined sheets.
+* `SubrowColumn(origcol, subrowidx, **kwargs)` proxies for another Column, in which its row is nested in another sequence or mapping.
+This is useful on a sheet with augmented rows, like `tuple(orig_index, orig_row)`; each column on the original sheet would be wrapped in a `SubrowColumn(col, 1)`, since `orig_row` is now `row[1]`.  Used in joined sheets.
 
 Recipes for a couple of recurring patterns:
 
