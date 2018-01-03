@@ -99,15 +99,17 @@ for postpath in `find $DOCS -name '*.md'`; do
     rm -f $posthtml.body
 done
 
-# Build /howto/dev
+# Build /howto
 for postpath in `find $HOWTO -name '*.md'`; do
     post=${postpath##$HOWTO/}
     postname=${post%.md}
-    mkdir -p $BUILDWWW/howto/dev/$postname
-    posthtml=$BUILDWWW/howto/dev/$postname/index
-    pandoc -r markdown -w html -o $posthtml.body $postpath
+    mkdir -p $BUILDWWW/howto/$postname
+    posthtml=$BUILDWWW/howto/$postname/index
+    pandoc --from markdown_strict -w html -o $posthtml.body $postpath
     $DEV/strformat.py body=$posthtml.body title=$postname head="" < $WWW/template.html > $posthtml.html
     rm -f $posthtml.body
+    cp $HOWTO/casts/$postname.cast $BUILDWWW/howto/$postname || :
+    cp $WWW/asciinema-player.* $BUILDWWW
 done
 
 # Build /news
