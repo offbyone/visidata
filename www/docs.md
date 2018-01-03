@@ -6,7 +6,7 @@
 
 * [CONTRIBUTING.md](/contributing) contains information on how to contribute to VisiData's ongoing development.
 
-* There are a few VisiData [demo videos](/videos).  Please leave a note in any of the community spaces if there are any features in particular you want to know about.
+* There are a few VisiData [demo videos](/videos).  Please post an issue or send an email if there are any features in particular you want to know about.
 
 ## For developers
 
@@ -14,6 +14,8 @@ The dream is for VisiData to be able to interact with data from any source or in
 
 Creating a loader for a new data source is easy and usually takes only an hour or two.  It's fun and rewarding to create a great terminal interface for your favorite data source.
 
-Currently, VisiData supports [tsv, csv, json, html, sqlite, hdf5, xlsx, xls, shp, and mbtiles file formats.  We would love to find devs interested in creating interfaces for all other data sources.
+VisiData [supports many different file formats and data sources](/man#loaders).  It would be fantastic to find devs interested in creating interfaces for other data sources.
 
 * [How to build a loader](/howto/dev/loaders)
+* [Graphics reference](/docs/graphics)
+

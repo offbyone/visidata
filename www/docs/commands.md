@@ -1,20 +1,26 @@
-# Design of VisiData: Commands
+- Updated: 2017-12-28
+- Version: VisiData 1.0
+
+# Commands
 
 Commands, initiated through keystrokes, are what make anything happen.
-Commands are strings, `exec()`d in a [specific Python context](#python).
-Commands may trigger an `error()` or provide a `status()`.
+
 Commands may be 'global' (available in all contexts) or 'sheet-specific'.
+
+Global commands are added by calling the `globalCommand` function at the toplevel:
+
+    globalCommand(keystrokes, execstr, helpstr, longname)
+
+`execstr` is a string, `exec()`d in a [specific Python context](#python).
 
 
 ## Command(keystrokes, execstr, helpstr)
 
-Creates a Command object that holds 
 If the execstr itself is in the commands mapping, then it is taken as an alias, and resolved recursively.
-### globalCommand(keystrokes, execstr, helpstr)
 
-Defines a command that is available in every context.  May be overridden in a user `.visidatarc`, or by the Sheets themselves.
+Defines a command that is available in every context.  May be overridden in a user [`.visidatarc`](/docs/options), or by the Sheets themselves.
 
-To create an alias for a command
+To create an alias for a command:
 
 
 To add sheet-specific commands (which will override any existing globalCommands)
