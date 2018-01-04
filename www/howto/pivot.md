@@ -1,3 +1,6 @@
+- Update: 2017-12-25
+- Version: VisiData 1.0
+
 # Creating a pivot table
 
 This example uses the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
@@ -13,3 +16,5 @@ To create a pivot table in VisiData:
 2. Press `+` to add an aggregrate to a second column. This configures which column is to be composed in relation to others. 
 3. (optional) Type the column being aggregated by pressing `~` (string), `#` (int), `%` (float), `$` (currency), or `@` (date).
 4. Press `W` to pivot on the dependent categorical variable.
+
+---
