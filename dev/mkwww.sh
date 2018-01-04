@@ -108,9 +108,10 @@ for postpath in `find $HOWTO -name '*.md'`; do
     pandoc --from markdown_strict -w html -o $posthtml.body $postpath
     $DEV/strformat.py body=$posthtml.body title=$postname head="" < $WWW/template.html > $posthtml.html
     rm -f $posthtml.body
-    cp $HOWTO/casts/$postname.cast $BUILDWWW/howto/$postname || :
-    cp $WWW/asciinema-player.* $BUILDWWW
 done
+mkdir -p $BUILDWWW/howto/casts
+cp $HOWTO/casts/* $BUILDWWW/howto/casts
+cp $WWW/asciinema-player.* $BUILDWWW
 
 # Build /news
 mkdir -p $BUILDWWW/news
