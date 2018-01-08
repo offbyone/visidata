@@ -1,25 +1,23 @@
-- Date: 2017-12-27
-- Version: 1.0
+- Updated: 2017-12-27
+- Version: VisiData 1.0
 
 # Customizing VisiData
 
-## .visidatarc
-
 ## Options
 
-To declare an option:
+- To declare an option:
 
 ```
 option('num_burgers', 42, 'number of burgers to use')
 ```
 
-To get the value of an option:
+- To get the value of an option:
 
 ```
 options.num_burgers or options['num_burgers']
 ```
 
-To set the value of an option:
+- To set the value of an option:
 
 ```
 options.num_burgers = 13
@@ -37,30 +35,51 @@ The maximum option name length should be 20.
 
 `theme()` should be used instead of `option()` if the option has no effect on the operation of the program, and can be overrided without affecting existing scripts.  The interfaces are identical.  (The implementation is also identical currently, but that may change in the future.)
 
+# Persisting options
+
+
+The contents of `.visidatarc` in the user's home directory (and also the current directory) are `exec()`d on startup.
+
+This can be used to persistently set any available options (as above):
+
+```
+options.num_burgers = 13
+```
+
+Command-line options will still override those set in `.visidatarc`.
+
 ## Commands
 
-### How to create a command alias
+Both `globalCommand` and `Command` take the same parameters:
+
+    Command(keystrokes, execstr, helpstr, longname)
+
+- To create a command alias:
 
     globalCommand('^D', 'd')
     globalCommand('^D', 'delete-row')
 
-### How to define a new command
+- To define a new command:
 
-    globalCommand('^D', 'sheet.topRowIndex += nVisibleRows//2', 'scroll half-page')
+    globalCommand('^D', 'sheet.topRowIndex += nVisibleRows//2', 'scroll one half-page down', 'scroll-halfpage-down')
 
-- or class YourSheet: commands=[Command(as above), ...] for sheet-level commands
+or for sheet-level commands:
 
-- execstr are resolved recursively, so they can be an existing keystroke or "base name" for those that have one.  The last in the chain is exec()ed.
+    class YourSheet:
+        commands=[Command(as above), ...]
 
-- put in .visidatarc (which is exec()ed Python also)
+or
 
-# How to override a keybinding
+    ColumnsSheet.commands += [Command(as above), ...]
 
-- globalCommand('^D', 'A', '')
+`execstr` is resolved recursively, so it can be an existing keystroke or `longname` for those that have one.  The last in the chain is exec()ed.
 
-# How to disable a keybinding
+- To override a keybinding:
 
-- globalCommand('^D', '')
+    globalCommand('^D', 'A', '')
+
+- To disable a keybinding:
+
+    globalCommand('^D', '')
 
 ---
-

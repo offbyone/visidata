@@ -555,7 +555,7 @@ opens sheet of source rows aggregated in current pivot cell
 dives further into Python object
 .It Ic "e"
 edits contents of current cell
-.It Ic "w"
+.It Ic "v"
 toggles whether methods and hidden properties are shown
 .El
 .
@@ -675,5 +675,5 @@ In addition, .zip and .gz files are decompressed on-the-fly.
 .
 .Sh AUTHOR
 .Nm VisiData
-was made with ♥ by
+was made by
 .An Saul Pwanson Aq Mt vd@saul.pw Ns .
