@@ -41,10 +41,14 @@ soelim -rt -I $BUILD $BUILD/vd.inc > $BUILD/vd-pre.1
 preconv -r -e utf8 $BUILD/vd-pre.1 > $MAN/vd.1   # checked in
 
 # build front page of visidata.org
-$DEV/strformat.py body=$WWW/frontpage-body.html title="VisiData" head='' < $WWW/template.html > $BUILDWWW/index.html
+#$DEV/strformat.py body=$WWW/frontpage-body.html title="VisiData" head='' < $WWW/template.html > $BUILDWWW/index.html
 for i in 404.html robots.txt main.css ; do
     cp $WWW/$i $BUILDWWW/
 done
+
+# Build /
+pandoc -r markdown -w html -o $BUILDWWW/index.body $WWW/index.md
+$DEV/strformat.py body=$BUILDWWW/index.body title="VisiData" head="" < $WWW/template.html > $BUILDWWW/index.html
 
 # Build /about
 pandoc -r markdown -w html -o $BUILDWWW/about/index.body $WWW/about.md
@@ -125,8 +129,10 @@ for postpath in `find $NEWS -name '*.md'`; do
     rm -f $posthtml.body
 done
 
-# Add the key
-cp $WWW/devotees.gpg.key $BUILDWWW
+# Add other toplevel static files
+for fn in devotees.gpg.key vdlogo.png ; do
+    cp $WWW/$fn $BUILDWWW/
+done
 
 #### At the end
 # add analytics to .html files
