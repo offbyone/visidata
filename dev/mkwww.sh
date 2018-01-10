@@ -12,22 +12,16 @@ BUILDWWW=$BUILD/www
 MAN=$VD/visidata/man
 DOCS=$WWW/docs
 HOWTO=$WWW/howto
-NEWS=$WWW/news
-VIDEOS=$WWW/videos
-HELP=$WWW/help
-INSTALL=$WWW/install
 
 # Build directories
 mkdir -p $BUILD
 mkdir -p $BUILDWWW
 mkdir -p $BUILDWWW/man
 mkdir -p $BUILDWWW/docs
-mkdir -p $BUILDWWW/howto/dev
 mkdir -p $BUILDWWW/about
+mkdir -p $BUILDWWW/history
+mkdir -p $BUILDWWW/howto
 mkdir -p $BUILDWWW/contributing
-mkdir -p $BUILDWWW/help
-mkdir -p $BUILDWWW/install
-mkdir -p $BUILDWWW/videos
 
 # Set up python and shell environment
 export PYTHONPATH=$VD:$VD/visidata
@@ -69,13 +63,6 @@ sed -i -e "s#<span style=\"font-weight:bold;\">SUPPORTED</span> <span style=\"fo
 pandoc -r markdown -w html -o $BUILDWWW/contributing/index.body $VD/CONTRIBUTING.md
 $DEV/strformat.py body=$BUILDWWW/contributing/index.body title="Contributing to VisiData" head="" < $WWW/template.html > $BUILDWWW/contributing/index.html
 
-# Build /help
-pandoc -r markdown -w html -o $BUILDWWW/help/index.body $HELP/index.md
-$DEV/strformat.py body=$BUILDWWW/help/index.body title="Support" head="" < $WWW/template.html > $BUILDWWW/help/index.html
-
-# Build /videos
-$DEV/strformat.py body=$VIDEOS/video-body.html title="VisiData Videos" head="" < $WWW/template.html > $BUILDWWW/videos/index.html
-
 # build /docs index
 pandoc -r markdown -w html -o $BUILDWWW/docs/index.body $WWW/docs.md
 $DEV/strformat.py body=$BUILDWWW/docs/index.body title="VisiData documentation" head="" < $WWW/template.html > $BUILDWWW/docs/index.html
@@ -103,20 +90,10 @@ for postpath in `find $HOWTO -name '*.md'`; do
     rm -f $posthtml.body
 done
 
-# Build /news
-mkdir -p $BUILDWWW/news
-$NEWS/mknews.py $NEWS/news.tsv > $BUILD/news.body
-$DEV/strformat.py body=$BUILD/news.body title="VisiData News" head='' < $WWW/template.html > $BUILDWWW/news/index.html
-
-for postpath in `find $NEWS -name '*.md'`; do
-    post=${postpath##$NEWS/}
-    postname=${post%.md}
-    mkdir -p $BUILDWWW/news/$postname
-    posthtml=$BUILDWWW/news/$postname/index
-    pandoc -r markdown -w html -o $posthtml.body $postpath
-    $DEV/strformat.py body=$posthtml.body title=$postname head="" < $WWW/template.html > $posthtml.html
-    rm -f $posthtml.body
-done
+# Build /history
+pandoc -r markdown -w html -o $BUILDWWW/history/index.body $WWW/history.md
+$DEV/strformat.py body=$BUILDWWW/history/index.body title="VisiData documentation" head="" < $WWW/template.html > $BUILDWWW/history/index.html
+rm -f $BUILDWWW/history/index.body
 
 # Add other toplevel static files
 for fn in devotees.gpg.key vdlogo.png ; do
