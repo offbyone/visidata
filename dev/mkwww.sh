@@ -73,17 +73,6 @@ $DEV/strformat.py body=$BUILDWWW/contributing/index.body title="Contributing to 
 pandoc -r markdown -w html -o $BUILDWWW/help/index.body $HELP/index.md
 $DEV/strformat.py body=$BUILDWWW/help/index.body title="Support" head="" < $WWW/template.html > $BUILDWWW/help/index.html
 
-# Build /install
-pandoc -r markdown -w html -o $BUILDWWW/install/index.body $INSTALL/index.md
-$DEV/strformat.py body=$BUILDWWW/install/index.body title="Installation" head="" < $WWW/template.html > $BUILDWWW/install/index.html
-
-# Create http://visidata.org/install/#pip3
-sed -i -e "s#<h2 id=\"install-via-pip3\">Install via pip3</h2>#<h2 id=\"install-via-pip3\"><a name=\"pip3\">Install via pip3</a></h2>#g" $BUILDWWW/install/index.html
-# Create http://visidata.org/install/#brew
-sed -i -e "s#<h2 id=\"install-via-brew\">Install via brew</h2>#<h2 id=\"install-via-brew\"><a name=\"brew\">Install via brew</a></h2>#g" $BUILDWWW/install/index.html
-# Create http://visidata.org/install/#apt
-sed -i -e "s#<h2 id=\"install-via-apt\">Install via apt</h2>#<h2 id=\"install-via-apt\"><a name=\"apt\">Install via apt</a></h2>#g" $BUILDWWW/install/index.html
-
 # Build /videos
 $DEV/strformat.py body=$VIDEOS/video-body.html title="VisiData Videos" head="" < $WWW/template.html > $BUILDWWW/videos/index.html
 
@@ -103,7 +92,7 @@ for postpath in `find $DOCS -name '*.md'`; do
     rm -f $posthtml.body
 done
 
-# Build /howto/dev
+# Build /howto
 for postpath in `find $HOWTO -name '*.md'`; do
     post=${postpath##$HOWTO/}
     postname=${post%.md}
