@@ -45,7 +45,7 @@ See [our homebrew repository](https://github.com/saulpw/homebrew-vd) for more in
 ### Linux (requires apt)
 
 ```
-$ apt install visidata
+$ apt-get install visidata
 ```
 
 See [our Debian repository](https://github.com/saulpw/deb-vd) for more information.
