@@ -348,6 +348,10 @@ pre#manpage {
     max-width: 60em;  /* should be half of COLUMNS=### in mkwww.sh */
 }
 
+pre.asciinema-terminal {
+    max-width: 80em;
+}
+
 
 /* --- Embedded content --- */
 
