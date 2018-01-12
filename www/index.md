@@ -1,34 +1,31 @@
-
-# VisiData ≐ (spreadsheet × Python × terminal)ⁿ
+# VisiData ≐ (rows × columns × Python × terminal)ⁿ
 
 <div class="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ozap_numsjI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ##
 
-<span class="center">
-VisiData is a multipurpose tool for exploring, cleaning, editing, and restructuring data in the terminal.
-</span>
 </div>
 
-
-Example usage:
-```
-$ vd foo.csv
- $ ls -al | vd
- $ vd --diff a.tsv b.tsv
-```
-
-and [many other uses](/docs#howto).
+<p class="center">
+VisiData ('vd' on the command-line) is an [open-source](https://github.com/saulpw/visidata) multitool for interacting with tabular data.
+</p>
 
 ---
 
-<a href="https://www.surveymonkey.com/r/C97ZMRR">
-<div id="survey">
-## Survey
-### What features do you use?
-</div>
-</a>
+- 2018-01-22: VisiData [v1.0](/releases/#v1.0) has been released!
+
+- 2018-01-12: How do you use VisiData?  [Take a quick survey and give your opinion](https://www.surveymonkey.com/r/C97ZMRR).
+
+- 2017-10-29: VisiData turns 1 year old with the [v0.97.1](/releases/#v0.97.1) release.
+
+- <form  action="https://tinyletter.com/visidata" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/visidata', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">Sign up for the email newsletter: <input type="text" style="width:140px" name="email" id="tlemail" /><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><a href="https://tinyletter.com" target="_blank"> (powered by TinyLetter)</a></form>
+
+---
+
+<h2 class="center">
+Installation
+</h2>
 
 <table class="install">
 <tr>
@@ -42,10 +39,10 @@ $ brew install saulpw/vd/visidata
 See [our homebrew repository](https://github.com/saulpw/homebrew-vd) for more information.
 </td>
 <td>
-### Linux (requires apt)
+### Linux (requires [apt](https://wiki.debian.org/Apt))
 
 ```
-$ apt-get install visidata
+$ apt install visidata
 ```
 
 See [our Debian repository](https://github.com/saulpw/deb-vd) for more information.
@@ -57,18 +54,20 @@ See [our Debian repository](https://github.com/saulpw/deb-vd) for more informati
 $ pip3 install visidata
 ```
 
-See [our source repository](https://github.com/saulpw/visidata) for more information.
+See [our Github repository](https://github.com/saulpw/visidata) for more information.
 </td>
 </tr>
 <tr>
 <td colspan=3>
-VisiData has support for [these sources](http://visidata.org/man/#loaders), but not all dependencies are installed automatically.  For additional sources and formats, see the [support page](/support).
+VisiData supports [many sources](http://visidata.org/man/#loaders), but not all dependencies are installed automatically.  For additional sources and formats, see the [support page](/support).
 </td>
 </tr>
 </table>
 
-<div class="signup">
+<!--div class="signup">
 <form  action="https://tinyletter.com/visidata" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/visidata', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
- <h3>Sign up for the mailing list</h3>
- <p><label for="tlemail">Enter your email address</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p></form>
-</div>
+ <h3>Sign up for the email list</h3>
+ <p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p></form>
+</div-->
+
+

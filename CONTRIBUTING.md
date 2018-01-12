@@ -17,19 +17,3 @@ Please submit a pull request against the `develop` branch with code improvements
 - [saul@visidata.org](mailto:saul@visidata.org) (author)
 - [anja@visidata.org](mailto:anja@visidata.org) (package maintainer)
 
-### Contributors
-
-Many thanks to the following people for their support and contributions to VisiData:
-
-- @anjakefala
-- @azag0
-- @brannerchinese
-- @jamesroutley
-- @jsvine
-- @khughitt
-- @repjarms
-- @scl17
-- @trentgill
-- @vbrown608
-- @wavexx
-- @zormit

@@ -26,6 +26,20 @@ One that could be used in any terminal, with any data source, with minimal requi
 
 ## Credits
 
-Thanks to all the [people who have contributed to VisiData](/help#contributors).
+Many thanks to [Anja](https://github.com/anjakefala) for significant help with documentation, releases, and tests.
 
-In particular, many thanks to [@anjakefala](https://github.com/anjakefala) for significant help with tests, documentation, and releases.
+Thanks also to the following people for their support and contributions to VisiData:
+
+- [azag0](https://github.com/azag0)
+- [brannerchinese](https://github.com/brannerchinese)
+- [eliasdorneles](https://github.com/eliasdorneles)
+- [jamesroutley](https://github.com/jamesroutley)
+- [jsvine](https://github.com/jsvine)
+- [khughitt](https://github.com/khughitt)
+- [repjarms](https://github.com/repjarms)
+- [scl17](https://github.com/scl17)
+- [trentgill](https://github.com/trentgill)
+- [vbrown608](https://github.com/vbrown608)
+- [wavexx](https://github.com/wavexx)
+- [zormit](https://github.com/zormit)
+
