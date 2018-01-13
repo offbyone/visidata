@@ -231,9 +231,9 @@ appends a blank row
 .It Ic "  d   gd"
 deletes current/all selected row(s) and moves to clipboard
 .It Ic "  y   gy"
-copies current/all selected row(s) to clipboard
+yanks (copies) current/all selected row(s) to clipboard
 .It Ic " zy"
-copies current cell to clipboard
+yanks (copies) current cell to clipboard
 .It Ic "  p    P"
 pastes clipboard rows after/before current row
 .It Ic " zp  gzp"
