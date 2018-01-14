@@ -1,5 +1,5 @@
 
-### User Documentation
+*User Documentation*
 
 * [quick reference guide](/man)
     * also available as a manpage via `man vd`
@@ -9,12 +9,12 @@
 
 - [demo videos](/videos)
 
-### How-tos
+*How-tos*
 
 * [how to graph a column](/howto/graph)
 * [how to customize vd](/howto/customize)
 
-### For developers
+*For developers*
 
 VisiData can interact with data from any source or in any format.
 
