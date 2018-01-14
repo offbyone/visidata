@@ -22,6 +22,7 @@ iframe {
 }
 
 em {
+    color: #216041;
     font-style: normal;
     font-weight: bold;
     font-size: 1.25em;
@@ -42,11 +43,7 @@ h3,
 h4 {
   color: #216041;
   display: block;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: .5em;
-  max-width: 50em;
+  text-align: center;
 }
 
 p {
@@ -104,6 +101,7 @@ ol {
 /* --- Navbar and Links --- */
 #nav {
    background: #56656F;
+   min-width: 100%;
    margin-bottom: 1em;
 }
 
@@ -130,6 +128,9 @@ iframe, div.center {
 
 table {
     max-width: 60em;
+    border-spacing: 4px 4px;
+    padding: .25em;
+    margin: auto;
 }
 
 .left {
@@ -187,6 +188,15 @@ a:hover .target {
 #nav a {
    color: #00cccc;
 }
+
+#footer a {
+   color: #00cccc;
+}
+
+a:hover {
+    text-decoration: underline; /* Links obtain an underline when hovered */
+}
+
 a {
     cursor: pointer;
     text-decoration: none; /* visited link should not be decorated */
@@ -218,12 +228,6 @@ a.button-hover:hover {
 }
 
 /* --- Spreadsheet tables --- */
-
-table {
-    border-spacing: 4px 4px;
-    padding: .25em;
-    margin: auto;
-}
 
 .table {
     display: table;
