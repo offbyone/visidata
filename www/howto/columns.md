@@ -52,7 +52,7 @@ VisiData utilises the power of Python regular expressions to provide more finetu
 ###
 
 1. `:` adds new columns derived from splitting the current column at positions defined by a regex pattern. The current row will be used to infer the number of columns that will be created.
-2. `;` adds new columns whose contents are derived from capture groups of regex. This command also requires an example row.
-3. `*` followed by 'regex'`/`'substring' to replace the capture groups in 'regex' with the contents of 'substring'. 'substring' may include backreferences (`\1` etc).
+2. `;` adds new columns derived from pulling the contents of the current column which matches the regex within capture groups. This command also requires an example row.
+3. `*` followed by 'regex'`/`'substring' replaces the text which matches the capture groups in 'regex' with the contents of 'substring'. 'substring' may include backreferences (`\1` etc).
 
 ---
