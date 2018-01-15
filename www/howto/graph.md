@@ -5,6 +5,11 @@
 
 This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/StatusPR.csv).
 
+<section id="hero">
+    <asciinema-player id="player" poster="npt:0:30" rows=27 src="../casts/pivot-graphs.cast"></asciinema-player>
+    <script type="text/javascript" src="/asciinema-player.js"></script>
+</section>
+
 Graphs in VisiData can be used to visualise the relationship between numeric dependent variables vs a numeric independent variable. Optionally, a second independent variable, which is categorical,  adds an additional colored scatter plot for each category.
 
 To graph a single column in VisiData:
