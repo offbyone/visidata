@@ -19,7 +19,7 @@ mkdir -p $BUILDWWW
 mkdir -p $BUILDWWW/man
 mkdir -p $BUILDWWW/docs
 mkdir -p $BUILDWWW/about
-mkdir -p $BUILDWWW/history
+mkdir -p $BUILDWWW/releases
 mkdir -p $BUILDWWW/howto
 mkdir -p $BUILDWWW/contributing
 
@@ -93,10 +93,10 @@ mkdir -p $BUILDWWW/howto/casts
 cp $HOWTO/casts/* $BUILDWWW/howto/casts
 cp $WWW/asciinema-player.* $BUILDWWW
 
-# Build /history
-pandoc -r markdown -w html -o $BUILDWWW/history/index.body $WWW/history.md
-$DEV/strformat.py body=$BUILDWWW/history/index.body title="VisiData documentation" head="" < $WWW/template.html > $BUILDWWW/history/index.html
-rm -f $BUILDWWW/history/index.body
+# Build /releases
+pandoc -r markdown -w html -o $BUILDWWW/releases/index.body $WWW/releases.md
+$DEV/strformat.py body=$BUILDWWW/releases/index.body title="VisiData documentation" head="" < $WWW/template.html > $BUILDWWW/releases/index.html
+rm -f $BUILDWWW/releases/index.body
 
 # Add other toplevel static files
 for fn in devotees.gpg.key vdlogo.png ; do

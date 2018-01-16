@@ -17,6 +17,8 @@ User-facing changes in this version:
 - `--version` (thanks to @jsvine)
 - `options.use_default_colors` (thanks to @wavexx)
 
+---
+
 # [v0.98.1](https://github.com/saulpw/visidata/releases/tag/v0.98.1) (2017-12-04)
 
 v0.98.1 is a patch release that fixes a couple of minor bugs.  The primary change in this release, however, is that the 'visidata' package on PyPI no longer includes all of the loaders' dependencies by default.
@@ -28,6 +30,8 @@ To install VisiData with all dependencies for all loaders:
     pip3 install "visidata[full]"
 
 Of course, you can install just the dependencies you need.  See ["SUPPORTED SOURCES"](http://visidata.org/man/#loaders) in the manpage for which packages to install.
+
+---
 
 # [v0.98](https://github.com/saulpw/visidata/releases/tag/v0.98)  (2017-11-23)
 
@@ -107,6 +111,8 @@ v0.97.1 has only a few small patches:
 - Fixed ENTER on SheetsSheet on SheetsSheet to be no-op
 - Fixed readthedocs redirect to visidata.org
 
+---
+
 # [v0.97](https://github.com/saulpw/visidata/releases/tag/v0.97) (2017-10-06)
 
 
@@ -164,6 +170,8 @@ Here are some more detailed descriptions of what comes with this release:
 - 'y' to yank/delete row; 'p' to paste
 - 'zy' to yank (copy) cell contents; 'zp' to paste ('gzp' to paste to all selected rows)
 - 'f' to fill null cells with the previous non-null value
+
+---
 
 # [v0.96](https://github.com/saulpw/visidata/releases/tag/v0.96) (2017-08-23)
 

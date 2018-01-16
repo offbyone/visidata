@@ -1,50 +1,133 @@
 /* css inspiration from: normalize.css v7.0.0 github.com/necolas/normalize.css */
 
-/* --- Website wide settings --- */
-
+/* Website wide settings and main structure */
 html {
   line-height: 1.15; /* Correct the line height in all browsers */
   -ms-text-size-adjust: 100%; /* Prevent adjustment of font size after orientation changes */
   -webkit-text-size-adjust: 100%; 
+  background: black;
 }
 
-/* --- General Text --- */
 body {
-  margin: 0; /* Remove the margins in all browsers */
+  margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 70%;
+  min-width: 768px;
   background: white;
-  width: 100%;
   font-family: Inconsolata, Consolas, monospace;
-  font-size: .75em;
+  font-size: 1em;
+}
+
+a {
+   cursor: pointer;
+   text-decoration: underline;
+   color: #4fc7ef;
+}
+
+a:visited {
+    text-decoration: none; /* visited link should not be decorated */
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+nav {
+   margin: auto;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+nav a:hover, a:hover {
+    text-decoration: underline; /* Links obtain an underline when hovered */
+}
+
+nav a {
+   text-decoration: none;
+   font-weight: bold;
+
+   font-weight: bold;
+   margin: 1em auto 1em;
+   display: block;
+}
+
+footer {
+    display: block; /* Add the correct display in IE 9- */
+    text-align: center;
+    padding: 10px;
+    height: 20px;
+}
+
+.logo {
+    height: 2em;
 }
 
 iframe {
     margin: auto;
+    display: block;
 }
 
-em {
-    color: #216041;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.25em;
-}
-
-
-h1 {
-    /* Correct the font size and margin on `h1` elements */
-    font-size: 2em;
-    margin: .67em 0;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: #000; /* #4fc7ef; */
+h1, h2, h3, h4 {
   display: block;
   text-align: center;
 }
+
+.install {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.install div {
+   min-width: 25em;
+   max-width: 30%;
+   margin: auto;
+   background: #eeeeee;
+   margin-bottom: 1em;
+   text-align: center;
+   border-radius: 4px;
+}
+
+/* --- Code block ---- */
+
+pre, code {
+    background: #dddddd;
+    font-family: Inconsolata, monospace; /* Correct the inheritance and scaling of font size in all browsers */
+    font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+    padding: 0.1em 0.25em 0.1em 0.25em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-weight: bold;
+}
+
+pre, pre code {
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto;
+    border: none;
+}
+
+pre {
+    display: block;
+    padding: 0.5em;
+    border: none;
+    width: 90%;
+    max-width: 80em;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+/* --- */
 
 p {
   margin: 1em auto 1em;
@@ -58,17 +141,6 @@ hr {
     box-sizing: content-box;
     height: 0; /* Add the correct box sizing in Firefox */
     overflow: visible; /* Show the overflow in Edge and IE */
-}
-
-abbr[title] {
-    border-bottom: none; /* Remove the bottom border in Chrome and Firefox */
-    text-decoration: underline; /* Add the correct text decoration in Chrome, Edge, IE, Opera and Safari */
-    text-decoration: underline dotted;
-}
-
-b,
-strong {
-    font-weight: bolder; /* Add the correct font weight */
 }
 
 /* --- Bullets and Lists --- */
@@ -96,136 +168,13 @@ ol {
     margin-left: 5em;
 }
 
-/* --- Navbar and Links --- */
-#nav {
-   background: white;
-   min-width: 100%;
-   margin-bottom: 1em;
-}
+/* --- Spreadsheet tables --- */
 
-table.fronttop td {
-   border: none;
-   text-align: left;
-}
-
-.center {
-   width: 100%;
-   text-align: center;
-}
-
-iframe, div.center {
-    display: block;
-    margin: auto;
-}
-
-.install td {
-    border-radius: 5px;
-}
-
-table {
-    max-width: 60em;
-    border-spacing: 4px 4px;
+.table, table {
+    border-spacing: 1em 1em;
     padding: .25em;
     margin: auto;
 }
-
-.left {
-    width: 50%;
-    margin: 2em;
-    float: left;
-}
-.right {
-    width: 50%;
-    margin: 2em;
-    float: right;
-}
-
-hr {
-    clear: both;
-}
-
-nav {
-   max-width: 40em;
-   margin: auto;
-   font-size: 20px;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-}
-
-nav div {
-    padding-left: 30px;
-    font-weight: normal;
-    margin: 1em auto 1em;
-}
-
-.logo {
-    height: 2em;
-}
-
-.target {
-   border-radius: 5px;
-   color: #00cccc;
-   max-width: 320px;
-   background: #96a5aF;
-   font-size: 24px;
-   padding: 1em;
-   text-align: center;
-}
-
-a:hover .target {
-   background: #56656F;
-   color: #000;
-}
-
-#nav a {
-   color: #4fc7ef;
-   text-decoration: none;
-   font-weight: bold;
-}
-
-#footer a {
-   color: #4fc7ef;
-}
-
-#nav a:hover, a:hover {
-    text-decoration: underline; /* Links obtain an underline when hovered */
-}
-
-a {
-    cursor: pointer;
-    text-decoration: underline; /* visited link should not be decorated */
-    color: #4fc7ef;
-}
-
-body a:visited {
-    text-decoration: none; /* visited link should not be decorated */
-}
-
-.button {
-    background-color: #8764c8;
-    border-radius: 10px;
-    opacity: 0.5;
-    color: #d6cae7;
-    font-size: 1em;
-    padding: 0.5em;
-    width: 30%;
-    margin: auto;
-}
-
-.button:hover {
-    color: #fff;
-    opacity: 1.0;
-}
-
-a.button-hover:hover {
-    text-decoration: none;
-}
-
-/* --- Spreadsheet tables --- */
 
 .table {
     display: table;
@@ -243,19 +192,19 @@ a.button-hover:hover {
     display: table-cell;
 }
 
-table div.row, table tr {
+table div.row {
     background-color: #dddddd;
 }
 
-table div.row:nth-child(even), table tr:nth-child(even) {
+table div.row:nth-child(even) {
     background: #CCC;
 }
 
-table div.row:nth-child(odd), table tr:nth-child(odd) {
+table div.row:nth-child(odd) {
     background: #FFF;
 }
 
-table div.cell, table td {
+table div.cell {
     background: #eeeeee;
     border-radius: 3px;
     padding: 5px;
@@ -300,10 +249,6 @@ table div.cell.step, table td.step {
     text-align: left;
 }
 
-.underline {
-    text-decoration: underline;
-}
-
 #index_container {
     list-style: none;
     margin-bottom: 20px;
@@ -317,367 +262,12 @@ table div.cell.step, table td.step {
    background: #fff;
    position: relative;
    float: left;
- }
-
-/* --- Code block ---- */
-
-pre, code
-{
-    white-space: pre-wrap;
-    word-wrap: break-word;
 }
 
-pre > code {
-    border: none;
-    background-color: inherit;
-    box-shadow: none;
+/* --- specific pages --- */
+
+#manpage {
+   font-size: 75%;
+   width: 100%;
+   max-width: 71em;
 }
-
-code {
-    font-family: Inconsolata, monospace; /* Correct the inheritance and scaling of font size in all browsers */
-    font-weight: bold;
-    font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
-    padding: 0.25em;
-    margin: 0.25em;
-    background: #cccccc;
-}
-
-pre, pre > code {
-    background-color: #dddddd;
-    white-space: pre;
-    word-wrap: normal;
-    overflow: auto;
-}
-
-pre {
-    font-family: Inconsolata, monospace; /* Correct the inheritance and scaling of font size in all browsers */
-    font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
-    display: block;
-    padding: 0.5em;
-    border: none;
-    max-width: 40em;
-    margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    line-height: 1.5;
-}
-
-pre#manpage {
-    max-width: 60em;  /* should be half of COLUMNS=### in mkwww.sh */
-}
-
-pre.asciinema-terminal {
-    max-width: 80em;
-}
-
-
-/* --- Embedded content --- */
-
-figure {
-    display: block; /* Add the correct display for IE */
-    margin: 1em 40px; /* Add the correct margin for IE */
-}
-
-audio,
-video {
-    display: inline-block;
-}
-
-img {
-    border-style: none; /* Remove the border on images inside links in IE */
-}
-
-svg:not(:root) {
-    overflow: hidden; /* Hide the overflow in IE */
-}
-
-div.youtube {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-}
-
-form {
-    padding: 3px;
-}
-
-.charcoal {
-   background: #56656F;
-}
-
-/* --- animations go here --- */
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  25% {
-    transform: translate(0, -5px);
-  }
-  50% {
-    transform: translate(0, 0px);
-  }
-  75% {
-    transform: translate(0, 5px);
-  }
-  100% {
-    transform: translate(0, 0px);
-  }
-}
-
-/* --- Homepage specific settings --- */
-
-/* TODO: This should be cleaned up */
-
- #feature {
-  background: white;
- }
-
- #more-info {
-  background: white;
- }
-
-#footer {
-    background: white;
-    text-align: center;
-    padding: 10px;
-    font-color: grey; /* We need a default text colour */
-    width: 100%;
-    height: 20px;
-}
-
-footer {
-    display: block; /* Add the correct display in IE 9- */
-    width: 100%;
-}
-
- .hero-container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   justify-content: space-between;
-   align-items: flex-start;
-
-   background: #e0e0e0;
-   padding: 20px 0 20px 20px;
- }
-
- .signup {
-   background: #e0e0e0;
-   width: 400px;
-   margin: auto;
-   }
-
- .hero-content {
-   flex: 0 1 100%;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   max-width: 500px;
-   margin: auto;
- }
- 
- .install-btns {
-     background-color: #8764c8;
-     border-radius: 3px;
-     font-size: 1em;
-     opacity: 0.5;
-     color: #d6cae7;
-     margin: auto;
-     text-align: center;
-     padding: 8px 15px;
-     display: inline-block;
- }
- 
- .install{
-    text-align: center;
- }
-
-.install-btns:hover {
-    color: #fff;
-    opacity: 1.0;
-}
-
- .hero-image {
-   flex: 0 1 100%;
-   max-width: 50%;
-   margin: auto;
-   /*padding-top: 35px;*/
- }
-
- .hero-image .asciinema-player {
-   /*width: 600px; */
-   padding-top: 30px;
- }
-
- .hero-tagline {
-   flex: 0 1 100%;
-   font-size: 42px;
-   font-weight: 700;
- }
-
- .hero-tagline > h1 {
-   margin: 0;
- }
-
- .hero-subtag {
-   flex: 0 1 100%;
- }
-
- .hero-install-tag {
-   flex: 0 1 100%;
-   font-size: 16px;
-   text-align: justify;
- }
-
-.hero-cta-container {
-  flex: 0 1 100%;
-  padding: 0.25em;
-  background: #303B40;
-}
-
-.cta-code {
-  font-family: Inconsolata;
-  text-align: center;
-  margin: auto;
-}
-
-.feature-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: space-between;
-  color: black;
-}
-
-.feature {
-  flex: 0 1 33%;
-  padding: 15px 0 20px 0;
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-  width: 300px;
-}
-
-.feature-image > img {
-  width: 300px;
-  height: 180px;
-}
-
-.feature-headline {}
-
-.feature-description > p {
-  margin: 0 30px 0 30px;
-  text-align: center;
-}
-
-.get-started-scroll {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: -50px;
-  color: black;
-}
-
-.floating {
-  animation: floating 5s infinite linear;
-}
-
-.more-info-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 50px 0 50px 0;
-
-  color: black;
-}
-
-.more-info-snippet {
-  flex: 0 1 100%;
-  padding: 0 25% 0 25%;
-  color: black;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: flex-center;
-}
-.more-info-snippet ul{
-  list-style-type: none;
-}
-  
-/*.more-info-snippet h3 {
-  align-self: flex-start;
-}*/
-
-
-
-/* start media queries */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-  img { display: none; } 
-
-  .hero-image { display: none; }
-  .feature-container { flex-direction: column; }
-  .feature-description { text-align: left; }
-  
-  .hero-tagline,
-  .hero-subtag,
-  .hero-install-tag
-    { max-width: 100%; }
-  .hero-cta-container { max-width: 80%; }
-}
-
-/* --- Corrections from normalize.css which may be relevant one day, but I do not think they currently are --- */
-
-article,
-aside,
-figcaption,
-header,
-main,
-section {
-    display: block; /* Add the correct diplay in IE 9- */
-}
-
-kbd,
-samp {
-    font-family: Inconsolata, monospace;
-    font-size: 1em;
-}
-
-dfn {
-    font-style: italic; /* Add the correct font style in Android */
-}
-
-mark {
-    background-color: #ff0;
-    color: #000 /* Add the correct color in IE 9 */
-}
-
-small {
-    font-size: 80%; /* Add the correct font size in all browsers */
-}
-
-sub,
-sup {
-    /* Prevent elements from affecting line-height in all browsers */
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sub {
-    bottom: -.25em;
-}
-
-sup {
-    top: -.5em
-}
-
