@@ -1,4 +1,3 @@
-# VisiData ≐ (rows × columns × Python × terminal)ⁿ
 
 <div class="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ozap_numsjI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -7,6 +6,7 @@
 
 </div>
 
+### VisiData ≐ (rows × columns × Python × terminal)ⁿ
 <p class="center">
 VisiData ('vd' on the command-line) is an [open-source](https://github.com/saulpw/visidata) multitool for interacting with tabular data.
 </p>

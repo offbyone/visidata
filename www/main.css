@@ -14,7 +14,7 @@ body {
   background: white;
   width: 100%;
   font-family: Inconsolata, Consolas, monospace;
-  font-size: medium;
+  font-size: .75em;
 }
 
 iframe {
@@ -41,14 +41,13 @@ h1,
 h2,
 h3,
 h4 {
-  color: #216041;
+  color: #000; /* #4fc7ef; */
   display: block;
   text-align: center;
 }
 
 p {
   margin: 1em auto 1em;
-  font-size: 1.05em;
   display: block;
   padding-bottom: 5px;
   line-height: 1.5;
@@ -85,7 +84,6 @@ ol {
     display: block;
     max-width: 50em;
     margin: 0px auto;
-    font-size: 1.05em;
     line-height: 1.5;
 }
 
@@ -100,7 +98,7 @@ ol {
 
 /* --- Navbar and Links --- */
 #nav {
-   background: #56656F;
+   background: white;
    min-width: 100%;
    margin-bottom: 1em;
 }
@@ -113,7 +111,6 @@ table.fronttop td {
 .center {
    width: 100%;
    text-align: center;
-   font-size: 20px;
 }
 
 iframe, div.center {
@@ -122,7 +119,6 @@ iframe, div.center {
 }
 
 .install td {
-    border: 1px black solid;
     border-radius: 5px;
 }
 
@@ -186,24 +182,26 @@ a:hover .target {
 }
 
 #nav a {
-   color: #00cccc;
+   color: #4fc7ef;
+   text-decoration: none;
+   font-weight: bold;
 }
 
 #footer a {
-   color: #00cccc;
+   color: #4fc7ef;
 }
 
-a:hover {
+#nav a:hover, a:hover {
     text-decoration: underline; /* Links obtain an underline when hovered */
 }
 
 a {
     cursor: pointer;
-    text-decoration: none; /* visited link should not be decorated */
-    color: #005555;
+    text-decoration: underline; /* visited link should not be decorated */
+    color: #4fc7ef;
 }
 
-a:visited {
+body a:visited {
     text-decoration: none; /* visited link should not be decorated */
 }
 
@@ -258,7 +256,7 @@ table div.row:nth-child(odd), table tr:nth-child(odd) {
 }
 
 table div.cell, table td {
-    border: 1px solid black;
+    background: #eeeeee;
     border-radius: 3px;
     padding: 5px;
     text-align: center;
@@ -345,7 +343,7 @@ code {
 }
 
 pre, pre > code {
-    background-color: #c5d6e0;
+    background-color: #dddddd;
     white-space: pre;
     word-wrap: normal;
     overflow: auto;
@@ -440,7 +438,7 @@ form {
  }
 
 #footer {
-    background: #56656F;
+    background: white;
     text-align: center;
     padding: 10px;
     font-color: grey; /* We need a default text colour */
