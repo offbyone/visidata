@@ -12,12 +12,18 @@ body {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  width: 70%;
-  min-width: 768px;
   background: white;
   font-family: Inconsolata, Consolas, monospace;
   font-size: 1em;
 }
+
+@media only screen and (min-width: 768px) {
+    body {
+        width: 70%;
+        min-width: 768px;
+    }
+}
+
 
 a {
    cursor: pointer;
@@ -43,15 +49,10 @@ nav {
    text-align: center;
 }
 
-nav a:hover, a:hover {
-    text-decoration: underline; /* Links obtain an underline when hovered */
-}
-
 nav a {
    text-decoration: none;
    font-weight: bold;
-
-   font-weight: bold;
+   font-size: 125%;
    margin: 1em auto 1em;
    display: block;
 }
@@ -70,6 +71,8 @@ footer {
 iframe {
     margin: auto;
     display: block;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -277,3 +280,6 @@ table div.cell.step, table td.step {
    max-width: 71em;
 }
 
+.asciicast {
+    max-width: 100%;
+}
