@@ -5,10 +5,10 @@
 
 This example uses the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
 
-<section id="hero">
+<div class="asciicast">
     <asciinema-player id="player" poster="npt:0:10" rows=27 src="../casts/pivot.cast"></asciinema-player>
     <script type="text/javascript" src="/asciinema-player.js"></script>
-</section>
+</div>
 
 To create a pivot table in VisiData:
 

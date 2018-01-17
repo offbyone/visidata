@@ -47,7 +47,7 @@ Python regular expressions provide more finetuned column splitting. The followin
 uses the commands for column splitting and transformation with [xd/puzzles.tsv](http://xd.saul.pw/xd-metadata.zip).
 
 <div class="asciicast">
-    <asciinema-player id="player" poster="npt=0:20" rows=27 src="../casts/split-regex.cast"></asciinema-player>
+    <asciinema-player id="player" poster="npt:0:20" rows=27 src="../casts/split-regex.cast"></asciinema-player>
     <script type="text/javascript" src="/asciinema-player.js"></script>
 </div>
 
