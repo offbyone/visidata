@@ -170,12 +170,6 @@ ol {
 
 /* --- Spreadsheet tables --- */
 
-.table, table {
-    border-spacing: 1em 1em;
-    padding: .25em;
-    margin: auto;
-}
-
 .table {
     display: table;
 }
@@ -192,19 +186,30 @@ ol {
     display: table-cell;
 }
 
-table div.row {
-    background-color: #dddddd;
+table, .table {
+    border-spacing: .25em .25em;
+    padding: .25em;
+    margin: auto;
+    border: 1px solid black;
 }
 
-table div.row:nth-child(even) {
+table th, .table .hdr {
+    text-decoration: underline;
+}
+
+table tr, .table .row {
+    background-color: #eeeeee;
+}
+
+table tr:nth-child(even), .table .row:nth-child(even) {
     background: #CCC;
 }
 
-table div.row:nth-child(odd) {
+table tr:nth-child(odd), .table .row:nth-child(odd) {
     background: #FFF;
 }
 
-table div.cell {
+table td, .table .cell {
     background: #eeeeee;
     border-radius: 3px;
     padding: 5px;
@@ -271,3 +276,4 @@ table div.cell.step, table td.step {
    width: 100%;
    max-width: 71em;
 }
+

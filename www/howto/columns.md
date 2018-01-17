@@ -36,20 +36,20 @@ Odd results while working with numerical or datetime data is usually due to valu
 
 The following example uses the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
 
-<section id="hero">
+<div class="asciicast">
     <asciinema-player id="player" poster="npt:0:20" rows=27 src="../casts/types.cast"></asciinema-player>
     <script type="text/javascript" src="/asciinema-player.js"></script>
-</section>
+</div>
 
 ## How to split a column
 
 Python regular expressions provide more finetuned column splitting. The following example
 uses the commands for column splitting and transformation with [xd/puzzles.tsv](http://xd.saul.pw/xd-metadata.zip).
 
-<section id="hero">
+<div class="asciicast">
     <asciinema-player id="player" poster="npt=0:20" rows=27 src="../casts/split-regex.cast"></asciinema-player>
     <script type="text/javascript" src="/asciinema-player.js"></script>
-</section>
+</div>
 
 ###
 
