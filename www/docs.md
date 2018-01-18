@@ -32,7 +32,7 @@
     * How to edit cells
     * How to quickly fill empty cells
     * How to specify Null cells
-* [Grouping data and descriptive statistics](/howto/pivot)
+* [Grouping data and descriptive statistics](/howto/group)
     * How to create a pivot table
     * How to create a frequency chart
     * How to calculate descriptive statistics
@@ -48,8 +48,10 @@
     * How to interact with graphs
 * [How to save and replay a VisiData session](/howto/save-restore)
 * [Customizing VisiData](/howto/customize)
-    * How to configure VisiData
+    * How to configure VisiData (user)
+    * How to configure VisiData (dev)
     * How to have configurations persist
+    * How to configure commands
 
 ###
 

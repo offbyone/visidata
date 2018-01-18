@@ -3,6 +3,8 @@
 
 # Drawing graphs
 
+Graphs in VisiData can be used to visualise the relationship between numeric dependent variables vs a numeric independent variable. Optionally, a second independent variable, which is categorical,  adds an additional colored scatter plot for each category.
+
 This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/StatusPR.csv).
 
 <section id="hero">
@@ -10,9 +12,8 @@ This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saul
     <script type="text/javascript" src="/asciinema-player.js"></script>
 </section>
 
-Graphs in VisiData can be used to visualise the relationship between numeric dependent variables vs a numeric independent variable. Optionally, a second independent variable, which is categorical,  adds an additional colored scatter plot for each category.
 
-To graph a single column in VisiData:
+## How to graph a single column
 
 1. Press `!` to set a column as the x-axis. This column must be numeric.
 2. Set that column to a numeric type by pressing `#` (int), `%` (float), `$` (currency), or `@` (date).
@@ -20,7 +21,7 @@ To graph a single column in VisiData:
 4. Type the column you wish to set as the dependent variable with a numeric type.
 5. Press `.` (dot=plot) on that column.
 
-To graph multiple columns in VisiData:
+## How to graph multiple columns
 
 1. Press `!` to set a column as the x-axis. This column must be numeric.
 2. Set that column to a numeric type.
@@ -29,7 +30,7 @@ To graph multiple columns in VisiData:
 5. Press `-` (dash) to hide any numeric columns you don't wish graphed.
 6. Press `g.`.
 
-# Interacting with graphs
+How to interact with graphs
 
 With the keyboard:
 

@@ -18,7 +18,7 @@ To hide columns in VisiData:
 *or*
 - Press `g_` to adjust the width of all visible columns.
 
-## How to change column types
+## How to specify column types
 
 Columns usually begin as untyped.
 

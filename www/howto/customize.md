@@ -3,7 +3,18 @@
 
 # Customizing VisiData
 
-## Options
+## How to configure VisiData (user)
+
+- Within the application itself, press `O` to access the `Options sheet`. An option can be edited either by pressing `Enter` or by using [standard editing commands]().
+- Options can also be passed as arguments through the commandline. For a full list of those, see the [manpage](/man)
+
+```
+vd --cmd-after-edit l
+or
+vd --cmd-after-edit=l
+```
+
+## How to configure VisiData (dev)
 
 - To declare an option:
 
@@ -35,7 +46,7 @@ The maximum option name length should be 20.
 
 `theme()` should be used instead of `option()` if the option has no effect on the operation of the program, and can be overrided without affecting existing scripts.  The interfaces are identical.  (The implementation is also identical currently, but that may change in the future.)
 
-# Persisting options
+## How to have configurations persist
 
 
 The contents of `.visidatarc` in the user's home directory (and also the current directory) are `exec()`d on startup.
@@ -48,7 +59,7 @@ options.num_burgers = 13
 
 Command-line options will still override those set in `.visidatarc`.
 
-## Commands
+## How to configure commands
 
 Both `globalCommand` and `Command` take the same parameters:
 

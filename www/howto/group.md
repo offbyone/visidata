@@ -1,7 +1,9 @@
 - Update: 2017-12-25
 - Version: VisiData 1.0
 
-# Creating a pivot table
+# Grouping data and descriptive statistics
+
+## How to create a pivot table
 
 This example uses the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
 
