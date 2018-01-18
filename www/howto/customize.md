@@ -1,4 +1,4 @@
-- Updated: 2017-12-27
+- Updated: 2018-01-17
 - Version: VisiData 1.0
 
 # Customizing VisiData
@@ -10,7 +10,9 @@
 
 ```
 vd --cmd-after-edit l
+
 or
+
 vd --cmd-after-edit=l
 ```
 

@@ -1,4 +1,4 @@
-- Updated: 2018-01-03
+- Updated: 2018-01-17
 - Version: VisiData 0.99
 
 # How to save and replay a VisiData session
