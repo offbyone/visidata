@@ -8,41 +8,40 @@
 - Within the application itself, press `O` to access the `Options sheet`. An option can be edited either by pressing `Enter` or by using [standard editing commands]().
 - Options can also be passed as arguments through the commandline. For a full list of those, see the [manpage](/man)
 
-```
+~~~
 vd --cmd-after-edit l
-
 or
-
 vd --cmd-after-edit=l
-```
+~~~
+
 
 ## How to configure VisiData (dev)
 
 - To declare an option:
 
-```
+~~~
 option('num_burgers', 42, 'number of burgers to use')
-```
+~~~
 
 - To get the value of an option:
 
-```
+~~~
 options.num_burgers or options['num_burgers']
-```
+~~~
 
 - To set the value of an option:
 
-```
+~~~
 options.num_burgers = 13
-```
+~~~
 
 The type of the default is respected, with an `Exception` raised if trying to set with a value that cannot be converted.  (A default value of None will allow any type.)
 
 Option names should use the underscore for word breaks.  On the command-line, underscores must be converted to dashes:
 
-```
+~~~
 $ vd --num-burgers=23
-```
+~~~
 
 The maximum option name length should be 20.
 
@@ -55,9 +54,9 @@ The contents of `.visidatarc` in the user's home directory (and also the current
 
 This can be used to persistently set any available options (as above):
 
-```
+~~~
 options.num_burgers = 13
-```
+~~~
 
 Command-line options will still override those set in `.visidatarc`.
 

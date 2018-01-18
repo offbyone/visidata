@@ -85,7 +85,7 @@ for postpath in `find $HOWTO -name '*.md'`; do
     postname=${post%.md}
     mkdir -p $BUILDWWW/howto/$postname
     posthtml=$BUILDWWW/howto/$postname/index
-    pandoc --from markdown_strict+table_captions+simple_tables -w html -o $posthtml.body $postpath
+    pandoc --from markdown_strict+table_captions+simple_tables+fenced_code_blocks -w html -o $posthtml.body $postpath
     $DEV/strformat.py body=$posthtml.body title=$postname head="" < $WWW/template.html > $posthtml.html
     rm -f $posthtml.body
 done

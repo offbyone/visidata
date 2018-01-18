@@ -9,25 +9,24 @@ In VisiData, [loaders](/howto/loaders) load files of a particular type. The foll
 
 On default, the file extension determines which loader is used. Unknown filetypes are loaded as `Text sheets`.
 
-```
+~~~
 vd sample.tsv
-```
+~~~
 
 To enforce usage of a particular loader pass the `-f` flag, along with the name of the loader.
 
-```
+~~~
 vd -f sqlite bar.db
-
 ls -l | vd -f fixed
-```
+~~~
 
 ## How to load multiple datasets simultaneously
 
 As desired, multiple files can be passed as inputs.
 
-```
+~~~
 vd birdsdiet.tsv surveys.csv sunshinelist.html
-```
+~~~
 
 Upon launching, VisiData will display the most recent dataset which was loaded (e.g. sunshinelist.html).
 
@@ -39,4 +38,4 @@ To access other loaded or derived sheets:
 2. Move the cursor to the row containing the desired sheet.
 3. Press `Enter` to jump to the sheet referenced in that current cursor row
 
-
+---
