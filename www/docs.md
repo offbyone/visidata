@@ -8,10 +8,9 @@
 
 **How To**
 
-* [Loading Data]
+* [Loading Data](/howto/loading)
     * How to specify a source
-    * How to work with multiple datasets
-    * How to work with nested data (z^Y)
+    * How to load multiple datasets simultaneously
 * [Navigation]
     * how to rapidly scroll through a sheet (< > { }) (how to get a feel for data?)
     * how to search within a sheet (/ g/ ? g? c r)
