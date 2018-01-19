@@ -22,6 +22,7 @@ mkdir -p $BUILDWWW/about
 mkdir -p $BUILDWWW/releases
 mkdir -p $BUILDWWW/howto
 mkdir -p $BUILDWWW/contributing
+mkdir -p $BUILDWWW/support
 
 # Set up python and shell environment
 export PYTHONPATH=$VD:$VD/visidata
@@ -62,6 +63,10 @@ sed -i -e "s#<span style=\"font-weight:bold;\">SUPPORTED</span> <span style=\"fo
 # Build /contributing
 pandoc -r markdown -w html -o $BUILDWWW/contributing/index.body $VD/CONTRIBUTING.md
 $DEV/strformat.py body=$BUILDWWW/contributing/index.body title="Contributing to VisiData" head="" < $WWW/template.html > $BUILDWWW/contributing/index.html
+
+# Build /support
+pandoc -r markdown -w html -o $BUILDWWW/support/index.body $WWW/support.md
+$DEV/strformat.py body=$BUILDWWW/support/index.body title="Support for VisiData" head="" < $WWW/template.html > $BUILDWWW/support/index.html
 
 # build /docs index
 pandoc -r markdown -w html -o $BUILDWWW/docs/index.body $WWW/docs.md
