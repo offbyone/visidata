@@ -80,6 +80,12 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
+h6 {
+    margin: 1em auto 1em;
+    font-size: 1.25em;
+    max-width: 40em;
+}
+
 .install {
    display: flex;
    flex-direction: row;
@@ -123,7 +129,7 @@ pre {
     padding: 0.5em;
     border: none;
     width: 90%;
-    max-width: 80em;
+    max-width: 45em;
     margin: auto;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -274,7 +280,7 @@ table div.cell.step, table td.step {
 
 /* --- specific pages --- */
 
-#manpage {
+pre#manpage {
    font-size: 75%;
    width: 100%;
    max-width: 71em;

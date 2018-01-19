@@ -1,12 +1,12 @@
 # User Documentation
 
-**Reference**
+###### Reference
 
 * [quick reference guide](/man)
     * also available as a manpage via `man vd`
     * and from inside VisiData with `F1` or `z?`
 
-**How To**
+###### How To
 
 * [Loading Data](/howto/loading)
     * How to specify a source
