@@ -3,19 +3,19 @@
 ###### Reference
 
 * [quick reference guide](/man)
-    * also available as a manpage via `man vd`
-    * and from inside VisiData with `F1` or `z?`
+    * comprehensive overview of all available commands and options
+    * also available as a manpage via `man vd` and from inside VisiData with `F1` or `z?`
 
 ###### How To
 
 * [Loading Data](/howto/loading)
     * How to specify a source
     * How to load multiple datasets simultaneously
-* [Navigation]
+* [Navigation](/howto/navigate)
     * how to rapidly scroll through a sheet (< > { }) (how to get a feel for data?)
     * how to search within a sheet (/ g/ ? g? c r)
     * how to move between sheets
-* [Rows]
+* [Rows](/howto/rows)
     * how to move and delete rows
     * how to perform operations on a subset of rows
     * how to filter rows

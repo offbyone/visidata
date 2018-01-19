@@ -204,6 +204,7 @@ table, .table {
 
 table th, .table .hdr {
     text-decoration: underline;
+    text-align: center;
 }
 
 table tr, .table .row {
