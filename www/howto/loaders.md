@@ -14,13 +14,11 @@ The process of designing a loader is:
 
 When VisiData tries to open a source with filetype `foo`, it tries to call `open_foo(path)`, which should return an instance of `Sheet`, or raise an error. `path` is a [`Path`](/api/Path) object of some kind.
 
-```
-def open_foo(p):
-    return FooSheet(p.name, source=p)
+    def open_foo(p):
+        return FooSheet(p.name, source=p)
 
-class FooSheet(Sheet):
-    rowtype = 'foobits'  # rowdef: foolib.Bar object
-```
+    class FooSheet(Sheet):
+        rowtype = 'foobits'  # rowdef: foolib.Bar object
 
 - The `Sheet` constructor takes the new sheet name as its first argument.
 Any other keyword arguments are set as attributes on the new instance.
@@ -34,14 +32,12 @@ Any other keyword arguments are set as attributes on the new instance.
 
 Using the Sheet `source`, `reload` populates `rows`:
 
-```
-class FooSheet(Sheet):
-    ...
-    def reload(self):
-        self.rows = []
-        for r in crack_foo(self.source):
-            self.rows.append(r)
-```
+    class FooSheet(Sheet):
+        ...
+        def reload(self):
+            self.rows = []
+            for r in crack_foo(self.source):
+                self.rows.append(r)
 
 - A `rowdef` comment should declare the **internal structure of each row**.
 - `rows` must be set to a **new list object**; do **not** call `list.clear()`.
@@ -61,19 +57,19 @@ Fortunately, making an [async](/docs/async) loader is pretty straightforward:
 
 5. Catch any `Exception`s that might be raised while handling a specific row, and add them as the row instead.  Never use a bare `except:` clause or the loader thread will not be killable.
 
-```
-class FooSheet(Sheet):
-    ...
-    @async
-    def reload(self):
-        self.rows = []
-        for bar in Progress(foolib.iterfoo(self.source.open_text())):
-            try:
-                r = foolib.parse(bar)
-            except Exception as e:
-                r = e
-            self.rows.append(r)
-```
+#### async example
+    class FooSheet(Sheet):
+        ...
+        @async
+        def reload(self):
+            self.rows = []
+            for bar in Progress(foolib.iterfoo(self.source.open_text())):
+                try:
+                    r = foolib.parse(bar)
+                except Exception as e:
+                    r = e
+                self.rows.append(r)
+
 
 Test the loader with a large dataset to make sure that:
 
@@ -83,19 +79,17 @@ Test the loader with a large dataset to make sure that:
 
 ## 3. Enumerate the columns
 
-Each sheet has a unique list of `columns`. Each [`Column`](/api/Column) provides a different view into the row.
+Each sheet has a unique list of `columns`. Each `Column` provides a different view into the row.
 
 
-```
-class FooSheet(Sheet):
-    ...
-    columns = [
-        ColumnAttr('name'),  # foolib.Bar.name
-        Column('bar', getter=lambda col,row: row.inside[2],
-                      setter=lambda col,row,val: row.set_bar(val)),
-        Column('baz', type=int, getter=lambda col,row: row.inside[1]*100)
-    ]
-```
+    class FooSheet(Sheet):
+        ...
+        columns = [
+            ColumnAttr('name'),  # foolib.Bar.name
+            Column('bar', getter=lambda col,row: row.inside[2],
+                          setter=lambda col,row,val: row.set_bar(val)),
+            Column('baz', type=int, getter=lambda col,row: row.inside[1]*100)
+        ]
 
 In general, set `columns` as a class member.  If the columns aren't known until the data is being loaded, 
 `reload()` should first call `columns.clear()`, and then call `addColumn(col)` for each column at the earliest opportunity.
@@ -161,13 +155,11 @@ Recipes for a couple of recurring patterns:
 
 There is a [separate howto for Commands](/howto/dev/commands).
 
-```
-class FooSheet(Sheet):
-    ...
-    commands = [
-        Command('b', 'cursorRow.set_bar(0)', 'reset bar to 0', 'reset-bar')
-    ]
-```
+    class FooSheet(Sheet):
+        ...
+        commands = [
+            Command('b', 'cursorRow.set_bar(0)', 'reset bar to 0', 'reset-bar')
+        ]
 
 - Reasonably intuitive and mnemonic default keybindings should be chosen.
 - The longname allows the command to be rebound by a more descriptive name, and for the command to be redefined for other contexts (so all keystrokes bound to that command will take on the new action).
@@ -176,49 +168,45 @@ class FooSheet(Sheet):
 
 This would be a completely functional read-only viewer for the fictional foolib.  For a more realistic example, see the [annotated viewtsv](/docs/viewtsv) or any of the [included loaders](https://github.com/saulpw/visidata/tree/stable/visidata/loaders).
 
-```
-from visidata import *
+    from visidata import *
 
-def open_foo(p):
-    return FooSheet(p.name, source=p)
+    def open_foo(p):
+        return FooSheet(p.name, source=p)
 
-class FooSheet(Sheet):
-    rowtype = 'foobits'  # rowdef: foolib.Bar object
-    columns = [
-        ColumnAttr('name'),  # foolib.Bar.name
-        Column('bar', getter=lambda col,row: row.inside[2],
-                      setter=lambda col,row,val: row.set_bar(val)),
-        Column('baz', type=int, getter=lambda col,row: row.inside[1]*100)
-    ]
-    commands = [
-        Command('b', 'cursorRow.set_bar(0)', 'reset bar to 0', 'reset-bar')
-    ]
+    class FooSheet(Sheet):
+        rowtype = 'foobits'  # rowdef: foolib.Bar object
+        columns = [
+            ColumnAttr('name'),  # foolib.Bar.name
+            Column('bar', getter=lambda col,row: row.inside[2],
+                          setter=lambda col,row,val: row.set_bar(val)),
+            Column('baz', type=int, getter=lambda col,row: row.inside[1]*100)
+        ]
+        commands = [
+            Command('b', 'cursorRow.set_bar(0)', 'reset bar to 0', 'reset-bar')
+        ]
 
-    @async
-    def reload(self):
-        import foolib
+        @async
+        def reload(self):
+            import foolib
 
-        self.rows = []
-        for bar in Progress(foolib.iterfoo(self.source.open_text())):
-            try:
-                r = foolib.parse(bar)
-            except Exception as e:
-                r = e
-            self.rows.append(r)
-```
+            self.rows = []
+            for bar in Progress(foolib.iterfoo(self.source.open_text())):
+                try:
+                    r = foolib.parse(bar)
+                except Exception as e:
+                    r = e
+                self.rows.append(r)
 
 ## Extra Credit: create a saver
 
 A full-duplex loader requires a **saver**.  The saver iterates over all `rows` and `visibleCols`, calling `getValue` or `getTypedValue`, and saves the results in the format of that filetype.
 
-```
-@async
-def save_foo(sheet, fn):
-    with open(fn, 'w') as fp:
-        for i, row in enumerate(Progress(sheet.rows)):
-            for col in sheet.visibleCols:
-                foolib.write(fp, i, col.name, col.getValue(row))
-```
+    @async
+    def save_foo(sheet, fn):
+        with open(fn, 'w') as fp:
+            for i, row in enumerate(Progress(sheet.rows)):
+                for col in sheet.visibleCols:
+                    foolib.write(fp, i, col.name, col.getValue(row))
 
 The saver should preserve the column names and translate their types into foolib semantics, but other attributes on the Columns should generally not be saved.
 
@@ -232,10 +220,8 @@ When VisiData tries to open a URL with schemetype of `foo` (i.e. starting with `
 If the URL indicates a particular type of Sheet (like `magnet://`), then it should construct that Sheet itself.
 If the URL is just a means to get to another filetype, then it can call `openSource` with a Path-like object that knows how to fetch the URL:
 
-```
-def openurl_foo(p, filetype=None):
-    return openSource(FooPath(p.url), filetype=filetype)
-```
+    def openurl_foo(p, filetype=None):
+        return openSource(FooPath(p.url), filetype=filetype)
 
 ---
 

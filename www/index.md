@@ -23,27 +23,21 @@ VisiData (`vd` on the command-line) is an [open-source](https://github.com/saulp
 <div>
 ### MacOS (requires [homebrew](https://brew.sh/))
 
-```
-$ brew install saulpw/vd/visidata
-```
+    $ brew install saulpw/vd/visidata
 
 See [our homebrew repository](https://github.com/saulpw/homebrew-vd) for more information.
 </div>
 <div>
 ### Linux (requires [apt](https://wiki.debian.org/Apt))
 
-```
-$ apt install visidata
-```
+    $ apt install visidata
 
 See [our Debian repository](https://github.com/saulpw/deb-vd) for more information.
 </div>
 <div>
 ### Other (requires [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3))
 
-```
-$ pip3 install visidata
-```
+    $ pip3 install visidata
 
 See [our Github repository](https://github.com/saulpw/visidata) for more information.
 </div>

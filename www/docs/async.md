@@ -50,9 +50,7 @@ In all `@async` functions, a `Progress` counter should be used to provide a prog
 
 When iterating over a potentially large sequence:
 
-```
-for item in Progress(iterable):
-```
+    for item in Progress(iterable):
 
 This is just like `for item in iterable`, but it also keeps track of progress, to display on the right status line.
 - This only displays if used in another thread (but is harmless if not).
@@ -63,9 +61,7 @@ This is just like `for item in iterable`, but it also keeps track of progress, t
 
 If `iterable` does not know its own length, it (or an approximation) should be passed as the `total` kwarg:
 
-```
-for item in Progress(iterable, total=approx_size):
-```
+    for item in Progress(iterable, total=approx_size):
 
 The `Progress` object contributes 1 towards the total for each iteration.
 To contribute a different amount, use `Progress.addProgress(n)` (n-1 if being used as an iterable, as 1 will be added automatically).
@@ -74,13 +70,11 @@ To contribute a different amount, use `Progress.addProgress(n)` (n-1 if being us
 
 To manage `Progress` without wrapping an iterable, use it as a context manager with only a `total` keyword argument, and call `addProgress` as progress is made:
 
-```
-with Progress(total=amt) as prog:
-    while amt > 0:
-        some_amount = some_work()
-        prog.addProgress(some_amount)
-        amt -= some_amount
-```
+    with Progress(total=amt) as prog:
+        while amt > 0:
+            some_amount = some_work()
+            prog.addProgress(some_amount)
+            amt -= some_amount
 
 - Using `Progress()` other than as an iterable or a context manager will have no effect.
 

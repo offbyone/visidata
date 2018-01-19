@@ -9,11 +9,11 @@ The `tests` folder contains functional tests in the form of `.vd` scripts, each 
 
 To run a test manually:
 
-```
-$ bin/vd --play tests/foo.vd --replay-wait 1
+    $ bin/vd --play tests/foo.vd --replay-wait 1
+
 or
-$ bin/vd -p tests/foo.vd -w 1
-```
+
+    $ bin/vd -p tests/foo.vd -w 1
 
 To build a `.vd` file:
 
@@ -21,9 +21,7 @@ To build a `.vd` file:
 2. Press `D` to view the `CommandLog Sheet`
 3. Edit the commandlog to minimize the number of commands.  Cells may be parameterized like `{foo}`, to be specified on the commandline:
 
-```
-$ vd cmdlog.vd --foo=value
-```
+    $ vd cmdlog.vd --foo=value
 
 4. Save the cmdlog using *one* of the following options:
 
