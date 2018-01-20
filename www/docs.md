@@ -25,8 +25,8 @@
     * How to hide and unhide columns
     * How to specify column types
     * How to split a column
-    * How to modify configuration for multiple columns
     * How to create derivative columns
+    * How to modify configuration for multiple columns
 * [Editing contents]
     * How to rename columns
     * How to edit cells

@@ -11,6 +11,8 @@ Commands(s)     Operation
  `H`  `L`       slides the current column one position to the left/right
 `gG` `gL`       slides the current column all the way to the left/right of the sheet
 
+---
+
 ## How to hide and unhide columns
 
 ######How to hide columns
@@ -32,6 +34,8 @@ Commands(s)     Operation
 3. Move the cursor down to the row which represents the column you wish to unhide. Currently, that cell should contain the value `0`.
 4. Press `e` followed by a *positive number* to set the width.
 5. Press `q` to return to the source sheet.
+
+---
 
 ## How to specify column types
 
@@ -62,6 +66,8 @@ The following example uses the file [sample.tsv](https://raw.githubusercontent.c
 2. Press `s` or `t` to select the rows referencing the columns you wish to type.
 3. Type `g` followed by the any of the above typing keystrokes to set the type of all selected columns on the source sheet.
 
+---
+
 ## How to split a column
 
 Python regular expressions provide more finetuned column splitting. The following example
@@ -77,6 +83,29 @@ uses the commands for column splitting and transformation with [xd/puzzles.tsv](
 1. `:` adds new columns derived from splitting the current column at positions defined by a regex pattern. The current row will be used to infer the number of columns that will be created.
 2. `;` adds new columns derived from pulling the contents of the current column which match the regex within capture groups. This command also requires an example row.
 3. `*` followed by 'regex'`/`'substring' replaces the text which matches the capture groups in 'regex' with the contents of 'substring'. 'substring' may include backreferences (`\1` etc).
+
+---
+
+## How to create derivative columns
+
+The `=` command takes a Python expression as input, evaluates the expression, and creates a new column from the result. Column names can be supplied as variables, in order to have the expression performed on the column cell-by-cell. VisiData supports `Tab` autocomplete of column names.
+
+The following example use the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
+
+**Query** On which days have we sold more than 10 `Item`s?
+
+1. Scroll to the `Unit`s column. Type the `Units` column by pressing `#` (int).
+2. Type `=` followed by *Units > 10*. A new column will be created. The cells in this column will contain the value `True` in rows where the number of `Unit`s are greater than 10 and `False` otherwise.
+3. Move to the new derived column.
+4. Type `|` followed by *True* to select all rows where there were more than 10 `Unit`s sold.
+5. Press `"` to open a duplicate sheet with only those selected rows.
+
+**Query** I have a dateset with separate columns for `Year`, `Month and `Day`. How can I concatenate them into a single date column?
+
+1. Type `=` followed by *Year + '-' + Month + '-' + Day*
+2. Set the type of the new derived column by pressing `@` (date).
+
+---
 
 ## How to modify configuration for multiple columns
 
@@ -109,12 +138,12 @@ The following examples use the file [sample.tsv](https://raw.githubusercontent.c
 
 1. Press `C` to open the Columns sheet.
 2. Move the cursor to the row referencing the source sheet `Units` column.
+
     a. Type the source sheet `Units` columns by pressing `#` (int).
     b. Move the cursor to the `aggregators` column.
     c. Type `e` to enter edit mode, followed by *sum avg*.
+
 3. Press `q` to exit and return to the source sheet.
 4. Move the cursor to the `Item` column. Press `F` to open the frequency table.
-
-## How to create derivative columns
 
 ---
