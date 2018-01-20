@@ -1,4 +1,4 @@
-- Update: 2018-01-18
+- Update: 2018-01-20
 - Version: VisiData 1.0
 
 # Rows
@@ -69,7 +69,7 @@ Command(s)         Operation
 1. Type the column being sorted by pressing `#` (int) or `%` (float).
 2. Press `[` to sort the column from highest to lowest.
 
-######How to sort a date colum in chronological order:
+######How to sort a date column in chronological order:
 
 1. Type the column being sorted by pressing `@` (date).
 2. Press `]` to sort the column chronologically.
