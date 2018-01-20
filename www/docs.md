@@ -33,6 +33,7 @@
     * How to quickly fill empty cells
     * How to specify Null cells
 * [Grouping data and descriptive statistics](/howto/group)
+    * How to set statistical aggregators
     * How to create a pivot table
     * How to create a frequency chart
     * How to calculate descriptive statistics

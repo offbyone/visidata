@@ -26,6 +26,7 @@ Commands(s)     Operation
 5. Press `q` to return to the source sheet.
 
 ######How to unhide columns
+
 1. Press `C` on the source sheet to open its columns metasheet.
 2. Move the cursor right to the `width` column
 3. Move the cursor down to the row which represents the column you wish to unhide. Currently, that cell should contain the value `0`.
@@ -36,7 +37,7 @@ Commands(s)     Operation
 
 Columns usually begin as untyped.
 
-To change the type of a column, use the following keystroke:
+To change the type of a column, use one of the following keystrokes:
 
  Command    Type
 --------- --------
@@ -54,6 +55,12 @@ The following example uses the file [sample.tsv](https://raw.githubusercontent.c
     <asciinema-player id="player" poster="npt:0:20" rows=27 src="../casts/types.cast"></asciinema-player>
     <script type="text/javascript" src="/asciinema-player.js"></script>
 </div>
+
+######How to specify batch specify column types for more than one column
+
+1. Press `C` to open the columns sheet.
+2. Press `s` or `t` to select the rows referencing the columns you wish to type.
+3. Type `g` followed by the any of the above typing keystrokes to set the type of all selected columns on the source sheet.
 
 ## How to split a column
 
@@ -73,5 +80,41 @@ uses the commands for column splitting and transformation with [xd/puzzles.tsv](
 
 ## How to modify configuration for multiple columns
 
+Properties of columns on the source sheet can be changed by using [standard editing commands](/howto/editing) on its Columns Sheet (accessed with `C`). In particular, it facilitates the selection of multiple columns, followed by utilising one of the `g`-prefixed commands to modify all of them.
+
+For a full list of available commands, see the [man page](/howto/man#columns). Some example workflows follow.
+
+###### How to set multiple statistical aggregators
+
+The following examples use the file [sample.tsv](https://raw.githubusercontent.com/saulpw/visidata/stable/sample_data/sample.tsv).
+
+**Question** What is the average daily revenue from sales of each `Item`?
+
+1. Press `C` to open the Columns sheet.
+2. Move the cursor to the row referencing the source sheet `Units` column.
+
+    a. Type the source sheet `Units` column by pressing `#` (int).
+    b. Press `s` or `t` to select it.
+
+3. Move the cursor to the row referencing the source sheet `Total` column.
+
+    a. Type the source sheet `Total` column by pressing `%` (float).
+    b. Press `s` or `t` to select it.
+
+4. Type `g+` followed by *avg* to add a `avg` statistical aggregator to the selected rows.
+5. Press `q` to exit and return to the source sheet.
+6. Scroll to the `Item` column. Press `F` to open the frequency table.
+
+**Question** What are the average daily and total number of `Units` sold for each `Item`?
+
+1. Press `C` to open the Columns sheet.
+2. Move the cursor to the row referencing the source sheet `Units` column.
+    a. Type the source sheet `Units` columns by pressing `#` (int).
+    b. Move the cursor to the `aggregators` column.
+    c. Type `e` to enter edit mode, followed by *sum avg*.
+3. Press `q` to exit and return to the source sheet.
+4. Move the cursor to the `Item` column. Press `F` to open the frequency table.
+
+## How to create derivative columns
 
 ---
