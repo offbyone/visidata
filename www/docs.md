@@ -12,15 +12,16 @@
     * How to specify a source
     * How to load multiple datasets simultaneously
 * [Navigation](/howto/navigate)
-    * how to rapidly scroll through a sheet (< > { }) (how to get a feel for data?)
-    * how to search within a sheet (/ g/ ? g? c r)
+    * how to rapidly scroll through a sheet
+    * how to search within a sheet
     * how to move between sheets
 * [Rows](/howto/rows)
-    * how to move and delete rows
     * how to perform operations on a subset of rows
     * how to filter rows
-    * how to sort
+    * how to move and delete rows 
+    * how to sort rows
 * [Columns](/howto/columns)
+    * How to designate key columns
     * How to hide and move columns
     * How to specify column types
     * How to split a column

@@ -1,4 +1,4 @@
-- Update: 2018-01-17
+: 2018-01-17
 - Version: VisiData 1.0
 
 # Columns
