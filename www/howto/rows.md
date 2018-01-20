@@ -62,7 +62,7 @@ Command(s)         Operation
 Command(s)         Operation
 -----------------  -------------
  `[`  `]`          sorts ascending/descending by current column
-`gJ` `gK`          sorts ascending/descending by all [key columns](/howto/columns#key)
+`g[` `g]`          sorts ascending/descending by all key columns
 
 ######How to sort a numerical column from highest number to lowest:
 
@@ -73,5 +73,10 @@ Command(s)         Operation
 
 1. Type the column being sorted by pressing `@` (date).
 2. Press `]` to sort the column chronologically.
+
+###### How to sort based on two columns
+
+1. Press `!` on those columns to designate them as key columns.
+2. Press `g[` or `g]` to sort.
 
 ---

@@ -21,8 +21,8 @@
     * how to move and delete rows 
     * how to sort rows
 * [Columns](/howto/columns)
-    * How to designate key columns
-    * How to hide and move columns
+    * How to manipulate columns
+    * How to hide and unhide columns
     * How to specify column types
     * How to split a column
     * How to modify configuration for multiple columns

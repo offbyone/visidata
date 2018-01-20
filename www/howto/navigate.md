@@ -21,13 +21,13 @@
 
 ## How to move between sheets
 
-Jumping to sheets:
+######Jumping to sheets:
 
 1. Press `S` to open the Sheets sheet.
 2. Move the cursor to the row containing the desired sheet.
 3. Press `Enter` to jump to the sheet referenced in that current cursor row.
 
-Jumping away from sheets:
+######Jumping away from sheets:
 
 - Press `^^` to jump to the previous sheet, without quitting the current one.
 

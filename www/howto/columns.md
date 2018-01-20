@@ -1,22 +1,36 @@
-: 2018-01-17
+- Update: 2018-01-20
 - Version: VisiData 1.0
 
 # Columns
 
-## How to hide and move columns
+## How to manipulate columns
 
-To manipulate columns in VisiData:
+Commands(s)     Operation
+------------    -----------
+`!`             pins the current column on the left as a key column
+ `H`  `L`       slides the current column one position to the left/right
+`gG` `gL`       slides the current column all the way to the left/right of the sheet
 
-- Press `H` and `L` to slide the current column one position to the left and right.
-- Press `gH` and `gL` to slide the current column all the way to the left and right of the sheet.
+## How to hide and unhide columns
 
-- Press `!` to pin current column on the left as a key column.
+######How to hide columns
 
-To hide columns in VisiData:
+- Press `-` (hyphen) to hide the current column.
 
-- Press `_` to adjust the width of the current column.
-*or*
-- Press `g_` to adjust the width of all visible columns.
+**or**
+
+1. Press `C` on the source sheet to open its columns metasheet.
+2. Move the cursor right to the `width` column
+3. Move the cursor down to the row which represents the column you wish to hide.
+4. Press `e` followed by *0* to set the width for that column to 0.
+5. Press `q` to return to the source sheet.
+
+######How to unhide columns
+1. Press `C` on the source sheet to open its columns metasheet.
+2. Move the cursor right to the `width` column
+3. Move the cursor down to the row which represents the column you wish to unhide. Currently, that cell should contain the value `0`.
+4. Press `e` followed by a *positive number* to set the width.
+5. Press `q` to return to the source sheet.
 
 ## How to specify column types
 
@@ -56,5 +70,8 @@ uses the commands for column splitting and transformation with [xd/puzzles.tsv](
 1. `:` adds new columns derived from splitting the current column at positions defined by a regex pattern. The current row will be used to infer the number of columns that will be created.
 2. `;` adds new columns derived from pulling the contents of the current column which match the regex within capture groups. This command also requires an example row.
 3. `*` followed by 'regex'`/`'substring' replaces the text which matches the capture groups in 'regex' with the contents of 'substring'. 'substring' may include backreferences (`\1` etc).
+
+## How to modify configuration for multiple columns
+
 
 ---
