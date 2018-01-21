@@ -20,6 +20,8 @@ Command(s)         Operation
 
 An example usage follows.
 
+---
+
 ## How to filter rows
 
 1. Press `s` or `t` on the rows you wish to filter.
@@ -32,6 +34,8 @@ An example usage follows.
     b. `gz"` to open a duplicate sheet with a deepcopy of selected rows.
 
 With rows that are shallowly copied, edits performed within the duplicate sheet will also propagate to the source sheet. This will not occur with deepcopied rows.
+
+---
 
 ## How to move, copy and remove rows
 
@@ -56,6 +60,8 @@ Command(s)         Operation
 2. Press `gd`/`gy` to cut/yank all selected rows to the clipboard.
 3. Move the cursor to the desired location.
 3. Press `p`/`P` to paste those rows after/before current row.
+
+---
 
 ## How to sort rows
 

@@ -20,6 +20,8 @@ vd -f sqlite bar.db
 ls -l | vd -f fixed
 ~~~
 
+---
+
 ## How to load multiple datasets simultaneously
 
 As desired, multiple files can be passed as inputs.

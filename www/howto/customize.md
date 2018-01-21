@@ -14,6 +14,7 @@ or
 vd --cmd-after-edit=l
 ~~~
 
+---
 
 ## How to configure VisiData (dev)
 
@@ -47,6 +48,8 @@ The maximum option name length should be 20.
 
 `theme()` should be used instead of `option()` if the option has no effect on the operation of the program, and can be overrided without affecting existing scripts.  The interfaces are identical.  (The implementation is also identical currently, but that may change in the future.)
 
+---
+
 ## How to have configurations persist
 
 
@@ -59,6 +62,8 @@ options.num_burgers = 13
 ~~~
 
 Command-line options will still override those set in `.visidatarc`.
+
+---
 
 ## How to configure commands
 

@@ -11,6 +11,8 @@
 
 - Use `{`/`}` to move up/down the current column to the next [selected](/howto/rows#subset) row.
 
+---
+
 ## How to search within a sheet
 
 - Press `/`/`?` followed by a regex search pattern to search for matches up/down the current column.
@@ -18,6 +20,8 @@
 - Press `g/`/`g?` followed by a regex pattern search to search for matches over all visible columns.
 
 - Press `n`/`N` to move to the next/previous match from the most recent search.
+
+---
 
 ## How to move between sheets
 

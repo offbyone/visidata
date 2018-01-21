@@ -12,6 +12,8 @@ This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saul
     <script type="text/javascript" src="/asciinema-player.js"></script>
 </section>
 
+---
+
 
 ## How to graph a single column
 
@@ -20,6 +22,8 @@ This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saul
 3. (optional) Press `!` on a categorical key column to add it as an additional independent variable.
 4. Type the column you wish to set as the dependent variable with a numeric type.
 5. Press `.` (dot=plot) on that column.
+
+---
 
 ## How to graph multiple columns
 
@@ -30,7 +34,9 @@ This example uses the file [StatusPR.csv](https://raw.githubusercontent.com/saul
 5. Press `-` (dash) to hide any numeric columns you don't wish graphed.
 6. Press `g.`.
 
-How to interact with graphs
+---
+
+##How to interact with graphs
 
 With the keyboard:
 
