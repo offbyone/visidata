@@ -102,8 +102,9 @@ The following example use the file [sample.tsv](https://raw.githubusercontent.co
 
 **Query** I have a dateset with separate columns for `Year`, `Month and `Day`. How can I concatenate them into a single date column?
 
-1. Type `=` followed by *Year + '-' + Month + '-' + Day*
+1. Type `=` followed by *Year + '-' + Month + '-' + Day*.
 2. Set the type of the new derived column by pressing `@` (date).
+3. Type `^` followed by *Date* to rename the column to `Date`.
 
 ---
 

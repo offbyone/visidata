@@ -27,18 +27,16 @@
     * How to split a column
     * How to create derivative columns
     * How to modify configuration for multiple columns
-* [Editing contents]
-    * How to rename columns
+* [Editing contents](/howto/edit)
     * How to edit cells
-    * How to quickly fill empty cells
-    * How to specify Null cells
+    * How to rename columns
 * [Grouping data and descriptive statistics](/howto/group)
-    * How to set statistical aggregators
+    * How to set statistical aggregators (monthly-revenue)
     * How to create a pivot table
     * How to create a frequency chart
     * How to calculate descriptive statistics
     * How to filter for grouped or described rows
-* How to create a sheet from scratch 
+* Creating sheets, rows and columns
     * (A a ga gz=)
 * Combining datasets
     * How to perform a join (include gC)
